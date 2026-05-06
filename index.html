@@ -33,7 +33,6 @@
                 <p>MeYouAir to nowa inicjatywa w sieci NewSky. Tworzymy miejsce dla pilotów, którzy cenią realizm, profesjonalne procedury i świetną atmosferę.</p>
                 <div class="info-grid">
                     <div class="info-item"><strong>Status:</strong> Prace techniczne</div>
-                    <div class="info-item"><strong>Baza:</strong> Wkrótce ogłosimy</div>
                 </div>
             </section>
 
@@ -42,13 +41,19 @@
                 <p>MeYouAir is a new initiative within the NewSky network. We are creating a space for pilots who value realism, professional procedures, and a great atmosphere.</p>
                 <div class="info-grid">
                     <div class="info-item"><strong>Status:</strong> Maintenance</div>
-                    <div class="info-item"><strong>Hub:</strong> To be announced</div>
                 </div>
             </section>
 
             <div class="cta-buttons">
-                <a href="#" class="btn btn-primary">Discord</a>
-                <a href="mailto:meyouair@gmail.com" class="btn btn-outline">Contact</a>
+                <!-- Przycisk NewSky -->
+                <a href="https://newsky.app/airline/mya/info" target="_blank" class="btn btn-primary">NewSky</a>
+                
+                <!-- Przycisk Discord z efektem hover -->
+                <a href="#" class="btn btn-discord">
+                    <span class="text-default">Discord</span>
+                    <span class="text-hover lang-pl">Wkrótce</span>
+                    <span class="text-hover lang-en" style="display:none;">Soon</span>
+                </a>
             </div>
         </main>
 
@@ -65,13 +70,26 @@
             const btnEn = document.getElementById('btn-en');
 
             if (lang === 'pl') {
-                plElements.forEach(el => el.style.display = 'block');
+                plElements.forEach(el => {
+                    // Obsługa spana wewnątrz przycisku Discord
+                    if(el.tagName === 'SPAN' && el.classList.contains('text-hover')) {
+                        el.style.display = ''; 
+                    } else {
+                        el.style.display = 'block';
+                    }
+                });
                 enElements.forEach(el => el.style.display = 'none');
                 btnPl.classList.add('active');
                 btnEn.classList.remove('active');
             } else {
                 plElements.forEach(el => el.style.display = 'none');
-                enElements.forEach(el => el.style.display = 'block');
+                enElements.forEach(el => {
+                    if(el.tagName === 'SPAN' && el.classList.contains('text-hover')) {
+                        el.style.display = ''; 
+                    } else {
+                        el.style.display = 'block';
+                    }
+                });
                 btnEn.classList.add('active');
                 btnPl.classList.remove('active');
             }
