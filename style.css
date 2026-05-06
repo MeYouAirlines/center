@@ -5,7 +5,6 @@
     --lime-glow: rgba(203, 212, 56, 0.5);
     --text-white: #ffffff;
     --text-dim: #b0b8d1;
-    --glass: rgba(255, 255, 255, 0.05);
 }
 
 * {
@@ -18,11 +17,11 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: var(--navy-dark);
     color: var(--text-white);
-    overflow-x: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    margin: 0;
 }
 
 .background-overlay {
@@ -37,180 +36,140 @@ body {
 
 .container {
     width: 90%;
-    max-width: 800px;
+    max-width: 750px;
     text-align: center;
-    padding: 40px 0;
-    animation: fadeIn 1s ease-out;
+    animation: fadeIn 0.8s ease-out;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(15px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
 /* Języki */
 .lang-switcher {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .lang-switcher button {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
     color: var(--text-dim);
-    padding: 6px 18px;
+    padding: 6px 15px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 700;
     transition: 0.3s;
-    border-radius: 8px;
-    margin: 0 5px;
+    border-radius: 6px;
+    margin: 0 4px;
+    font-size: 12px;
 }
 
 .lang-switcher button.active {
     background: var(--lime);
     color: var(--navy-dark);
     border-color: var(--lime);
-    box-shadow: 0 0 15px var(--lime-glow);
 }
 
 /* Header */
-header {
-    margin-bottom: 40px;
-}
-
-.logo-container {
-    margin-bottom: 20px;
-}
-
 .main-logo {
-    width: 130px;
-    height: auto;
-    filter: drop-shadow(0 0 20px var(--lime-glow));
-    transition: transform 0.5s ease;
-}
-
-.main-logo:hover {
-    transform: scale(1.05) rotate(2deg);
+    width: 120px;
+    filter: drop-shadow(0 0 15px var(--lime-glow));
+    margin-bottom: 10px;
 }
 
 .brand-name {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 900;
-    letter-spacing: -2px;
-    margin-bottom: 15px;
+    letter-spacing: -1.5px;
+    margin-bottom: 30px;
 }
 
 .brand-name span {
     color: var(--lime);
-    text-shadow: 0 0 20px var(--lime-glow);
-}
-
-.status-badge {
-    display: inline-block;
-    padding: 8px 20px;
-    border: 1px solid var(--lime);
-    color: var(--lime);
-    text-transform: uppercase;
-    font-size: 11px;
-    font-weight: 800;
-    border-radius: 30px;
-    letter-spacing: 2px;
-    background: rgba(203, 212, 56, 0.05);
 }
 
 /* Glass Card */
 .glass-card {
-    background: var(--glass);
+    background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 32px;
-    padding: 50px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    padding: 40px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+}
+
+/* Status Bar - Pełna Szerokość */
+.status-bar-container {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.status-bar {
+    width: 100%;
+    background: rgba(203, 212, 56, 0.1);
+    border: 1px solid var(--lime);
+    color: var(--lime);
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
 h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    font-weight: 700;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
 }
 
 p {
     color: var(--text-dim);
-    line-height: 1.8;
-    margin-bottom: 35px;
-    font-size: 1.05rem;
-}
-
-.info-grid {
-    display: flex;
-    justify-content: center;
+    line-height: 1.7;
     margin-bottom: 35px;
 }
 
-.info-item {
-    background: rgba(255,255,255,0.03);
-    padding: 15px 30px;
-    border-radius: 15px;
-    border: 1px solid rgba(255,255,255,0.05);
-}
-
-.info-item strong {
-    color: var(--lime);
-    margin-right: 10px;
-}
-
-/* Buttons */
+/* Przyciski */
 .cta-buttons {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     justify-content: center;
 }
 
 .btn {
+    flex: 1; /* Rozciągają się po równo */
+    max-width: 200px;
     position: relative;
-    padding: 16px 35px;
-    border-radius: 14px;
+    padding: 15px 0;
+    border-radius: 12px;
     text-decoration: none;
     font-weight: 800;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    font-size: 16px;
+    transition: 0.3s all;
+    font-size: 14px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 160px;
+    border: none;
+    cursor: pointer;
 }
 
-.btn-primary {
+/* Wspólny styl dla obu żółtych przycisków */
+.btn-primary, .btn-discord {
     background: var(--lime);
     color: var(--navy-dark);
-    box-shadow: 0 10px 25px rgba(203, 212, 56, 0.2);
+    box-shadow: 0 8px 20px rgba(203, 212, 56, 0.2);
 }
 
-.btn-primary:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px var(--lime-glow);
-    background: #d9e43e;
+.btn-primary:hover, .btn-discord:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px var(--lime-glow);
+    filter: brightness(1.1);
 }
 
-/* Przycisk Discord z efektem Soon */
-.btn-discord {
-    border: 1px solid rgba(255,255,255,0.2);
-    color: var(--text-white);
-    background: rgba(255,255,255,0.05);
-}
-
+/* Specyfika przycisku Discord */
 .btn-discord .text-hover {
     display: none;
     position: absolute;
-}
-
-.btn-discord:hover {
-    background: #5865F2; /* Kolor Discorda */
-    border-color: #5865F2;
-    transform: translateY(-5px);
 }
 
 .btn-discord:hover .text-default {
@@ -219,25 +178,20 @@ p {
 
 .btn-discord:hover .text-hover {
     display: block;
-    animation: slideUp 0.3s ease;
 }
 
-@keyframes slideUp {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
+/* Stopka */
 footer {
-    margin-top: 50px;
+    margin-top: 40px;
     font-size: 13px;
     color: var(--text-dim);
-    letter-spacing: 0.5px;
+    opacity: 0.7;
 }
 
-/* Responsywność */
+/* Mobile */
 @media (max-width: 600px) {
-    .brand-name { font-size: 2.5rem; }
+    .brand-name { font-size: 2.2rem; }
     .cta-buttons { flex-direction: column; align-items: center; }
-    .btn { width: 100%; }
+    .btn { width: 100%; max-width: none; }
     .glass-card { padding: 30px 20px; }
 }
