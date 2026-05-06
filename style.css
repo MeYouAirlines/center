@@ -1,0 +1,183 @@
+/* TWOJE KOLORY I STYL */
+.mya-newsky-card,
+.mya-newsky-card * {
+    box-sizing: border-box !important;
+    letter-spacing: 0 !important
+}
+
+/* DODATEK: DINOZAURY BUDOWLAŃCE */
+.construction-banner {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    font-size: 50px;
+}
+
+.dino {
+    position: relative;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+.dino span {
+    position: absolute;
+    top: -10px;
+    right: -15px;
+    font-size: 25px;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* TWOJA ORYGINALNA RESZTA KODU (PODRASOWANA) */
+.mya-newsky-card {
+    --mya-navy: #1f337a;
+    --mya-navy-dark: #111b48;
+    --mya-blue: #3355b7;
+    --mya-lime: #cbd438;
+    --mya-lime-dark: #a7b121;
+    --mya-text: #eef3ff;
+    --mya-muted: #b8c1d8;
+    --mya-line: rgba(255, 255, 255, 0.16);
+    --mya-panel: rgba(255, 255, 255, 0.075);
+    display: block !important;
+    width: min(1120px, 100%) !important;
+    margin: 28px auto !important;
+    padding: 18px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(255, 255, 255, .14) !important;
+    border-radius: 12px !important; /* Bardziej zaokrąglone */
+    color: var(--mya-text) !important;
+    background: radial-gradient(circle at 85% 8%, rgba(203, 212, 56, .2), transparent 300px), linear-gradient(135deg, rgba(17, 27, 72, .98)0, rgba(22, 34, 84, .97) 48%, rgba(18, 20, 30, .98) 100%) !important;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, .4) !important;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif !important
+}
+
+.mya-newsky-card .mya-header {
+    display: grid !important;
+    grid-template-columns: 128px minmax(0, 1fr) 200px !important;
+    align-items: center !important;
+    gap: 26px !important;
+    min-height: 176px !important;
+    padding: 26px !important;
+    border: 1px solid var(--mya-line) !important;
+    border-radius: 8px !important;
+    background: linear-gradient(90deg, rgba(31, 51, 122, .48), rgba(255, 255, 255, .035)), rgba(255, 255, 255, .045) !important
+}
+
+.mya-newsky-card .mya-logo-wrap {
+    display: grid !important;
+    place-items: center !important;
+    width: 118px !important;
+    height: 118px !important;
+    overflow: hidden !important;
+    border: 4px solid var(--mya-lime) !important; /* Limonkowa obwódka logo */
+    border-radius: 50% !important;
+    background: #fff !important;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, .32) !important
+}
+
+.mya-newsky-card .mya-logo {
+    display: block !important;
+    width: 106px !important;
+    height: 106px !important;
+    object-fit: contain !important;
+}
+
+/* Kopiuj resztę swojego stylu CSS tutaj bez zmian... */
+/* (Wklejam tylko te części, które warto utrzymać, reszta z Twojego kodu zadziała idealnie) */
+
+.mya-newsky-card .mya-kicker {
+    display: inline-flex !important;
+    color: #f4ff73 !important;
+    background: rgba(203, 212, 56, .12) !important;
+    border: 1px solid rgba(203, 212, 56, .42) !important;
+    border-radius: 999px !important;
+    padding: 7px 13px !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+}
+
+.mya-newsky-card .mya-heading h1 {
+    margin: 0 !important;
+    font-size: clamp(48px, 6vw, 78px) !important;
+    font-weight: 900 !important;
+    line-height: .98 !important;
+}
+
+.mya-newsky-card .mya-status {
+    padding: 14px 16px !important;
+    border: 1px solid var(--mya-lime) !important;
+    border-radius: 8px !important;
+    background: rgba(10, 16, 42, .8) !important;
+}
+
+.mya-newsky-card .mya-info-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    margin: 14px 0 !important;
+}
+
+.mya-newsky-card .mya-info-box {
+    padding: 16px 18px !important;
+    border: 1px solid var(--mya-line) !important;
+    background: var(--mya-panel) !important;
+    border-radius: 8px !important;
+}
+
+.mya-newsky-card .mya-description-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+}
+
+.mya-newsky-card .mya-description {
+    padding: 24px !important;
+    border: 1px solid rgba(94, 124, 214, .48) !important;
+    border-radius: 8px !important;
+    background: linear-gradient(180deg, rgba(49, 80, 173, .2), rgba(255, 255, 255, .02)) !important;
+}
+
+.mya-newsky-card .mya-lang {
+    background: var(--mya-lime) !important;
+    color: #111b48 !important;
+    padding: 2px 8px !important;
+    border-radius: 4px !important;
+    font-weight: 900 !important;
+}
+
+.mya-newsky-card .mya-actions {
+    display: flex !important;
+    gap: 12px !important;
+    margin-top: 20px !important;
+}
+
+.mya-newsky-card .mya-button {
+    flex: 1 !important;
+    padding: 16px !important;
+    text-align: center !important;
+    border-radius: 8px !important;
+    font-weight: 900 !important;
+    text-decoration: none !important;
+    color: white !important;
+    background: linear-gradient(135deg, var(--mya-navy), var(--mya-blue)) !important;
+    border: 1px solid var(--mya-blue) !important;
+}
+
+.mya-newsky-card .mya-button--accent {
+    background: var(--mya-lime) !important;
+    color: var(--mya-navy-dark) !important;
+    border-color: var(--mya-lime-dark) !important;
+}
+
+/* Responsywność */
+@media (max-width: 900px) {
+    .mya-header { grid-template-columns: 1fr !important; text-align: center !important; }
+    .mya-logo-wrap { margin: 0 auto !important; }
+    .mya-info-grid, .mya-description-grid { grid-template-columns: 1fr !important; }
+    .mya-status { text-align: center !important; }
+}
