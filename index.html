@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MeYouAir | Virtual Airline</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -23,34 +23,26 @@
                 <img src="logo.png" alt="MeYouAir Logo" class="main-logo">
             </div>
             <h1 class="brand-name">MeYou<span>Air</span></h1>
+            <!-- Status nad kartą -->
+            <div class="status-top lang-pl">Strona w budowie</div>
+            <div class="status-top lang-en" style="display:none;">Site under construction</div>
         </header>
 
         <main class="glass-card">
-            <!-- Sekcja statusu na całą szerokość -->
-            <div class="status-bar-container">
-                <div class="status-bar lang-pl">
-                    <strong>STATUS:</strong> PRACE TECHNICZNE
-                </div>
-                <div class="status-bar lang-en" style="display:none;">
-                    <strong>STATUS:</strong> MAINTENANCE IN PROGRESS
-                </div>
-            </div>
-
             <section class="content lang-pl">
                 <h2>Witaj w przyszłości wirtualnego latania</h2>
                 <p>MeYouAir to nowa inicjatywa w sieci NewSky. Tworzymy miejsce dla pilotów, którzy cenią realizm, profesjonalne procedury i świetną atmosferę.</p>
+                <div class="status-line"><strong>Status:</strong> Prace techniczne</div>
             </section>
 
             <section class="content lang-en" style="display:none;">
                 <h2>Welcome to the future of virtual flying</h2>
                 <p>MeYouAir is a new initiative within the NewSky network. We are creating a space for pilots who value realism, professional procedures, and a great atmosphere.</p>
+                <div class="status-line"><strong>Status:</strong> Maintenance</div>
             </section>
 
             <div class="cta-buttons">
-                <!-- Przycisk NewSky -->
                 <a href="https://newsky.app/airline/mya/info" target="_blank" class="btn btn-primary">NewSky</a>
-                
-                <!-- Przycisk Discord (Żółty, po najechaniu Soon) -->
                 <a href="#" class="btn btn-discord">
                     <span class="text-default">Discord</span>
                     <span class="text-hover lang-pl">Wkrótce</span>
