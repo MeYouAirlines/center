@@ -3,55 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MeYouAir - Under Construction</title>
+    <title>MeYouAir | Work in Progress</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="mya-newsky-card">
-    <!-- SEKCJA BUDOWY (DINOZAURY) -->
-    <div class="construction-banner">
-        <div class="dino">🦖<span>🏗️</span></div>
-        <div class="dino">🦕<span>🔨</span></div>
-        <div class="dino">🦖<span>🚧</span></div>
+<div class="mya-container">
+    <!-- DINO ART SECTION -->
+    <div class="dino-art-container">
+        <!-- Dino 1: Kierownik T-Rex -->
+        <div class="dino-character">
+            <svg viewBox="0 0 100 100" class="dino-svg">
+                <!-- Ciało -->
+                <path d="M20,80 Q20,40 50,40 T80,80" fill="#1f337a" />
+                <circle cx="65" cy="55" r="3" fill="white" />
+                <!-- Kask -->
+                <path d="M40,40 Q50,25 70,40" fill="#cbd438" stroke="#111b48" stroke-width="2"/>
+                <rect x="38" y="38" width="34" height="4" fill="#cbd438" />
+                <!-- Kamizelka -->
+                <rect x="35" y="60" width="30" height="15" fill="#cbd438" opacity="0.8" />
+            </svg>
+            <div class="tool">📋</div>
+        </div>
+
+        <!-- Dino 2: Budowniczy Triceratops -->
+        <div class="dino-character">
+            <svg viewBox="0 0 100 100" class="dino-svg">
+                <path d="M10,80 Q10,50 40,50 T90,80" fill="#3355b7" />
+                <path d="M35,50 L30,35 M45,45 L45,30 M55,50 L60,35" stroke="#eef3ff" stroke-width="3"/>
+                <!-- Kask -->
+                <path d="M30,55 Q50,40 75,55" fill="#cbd438" stroke="#111b48" stroke-width="2"/>
+            </svg>
+            <div class="tool">🔧</div>
+        </div>
+
+        <!-- Dino 3: Inżynier Diplodok -->
+        <div class="dino-character">
+            <svg viewBox="0 0 100 100" class="dino-svg">
+                <path d="M10,80 Q30,80 35,50 L40,20 Q45,10 55,20 L55,80" fill="#1f337a" stroke="#3355b7" />
+                <circle cx="48" cy="22" r="2" fill="white" />
+                <!-- Kask -->
+                <path d="M42,20 Q50,10 58,20" fill="#cbd438" stroke="#111b48" stroke-width="2"/>
+            </svg>
+            <div class="tool">🏗️</div>
+        </div>
     </div>
 
-    <div class="mya-header">
-        <div class="mya-logo-wrap">
-            <!-- Tutaj będzie Twoje logo z pliku logo.png -->
-            <img class="mya-logo" src="logo.png" alt="MeYouAir Logo" />
+    <!-- TWOJA KARTA -->
+    <div class="mya-newsky-card">
+        <div class="mya-header">
+            <div class="mya-logo-wrap">
+                <img class="mya-logo" src="logo.png" alt="MeYouAir Logo" />
+            </div>
+            <div class="mya-heading">
+                <span class="mya-kicker">Virtual Airline - NewSky Operations</span>
+                <h1>MeYouAir</h1>
+                <p>Nasze hangary są właśnie rozbudowywane.</p>
+            </div>
+            <div class="mya-status"><span>Status</span> <strong>PRACE TECHNICZNE</strong></div>
         </div>
-        <div class="mya-heading">
-            <span class="mya-kicker">Virtual Airline - NewSky Operations</span>
-            <h1>MeYouAir</h1>
-            <p>A virtual airline running on the NewSky app.</p>
-        </div>
-        <div class="mya-status"><span>Status</span> <strong>STRONA W BUDOWIE / UNDER CONSTRUCTION</strong></div>
-    </div>
 
-    <div class="mya-info-grid">
-        <div class="mya-info-box"><span>Ostatnia aktualizacja</span> <strong>05.05.2024</strong></div>
-        <div class="mya-info-box"><span>Email</span> <strong>meyouair@gmail.com</strong></div>
-    </div>
-
-    <div class="mya-description-grid">
-        <div class="mya-description">
-            <span class="mya-lang">PL</span>
-            <h2>Trwają prace techniczne</h2>
-            <p>MeYouAir to wirtualna linia lotnicza dla pilotów NewSky. Obecnie montujemy nasze hangary i tankujemy samoloty. Zapraszamy wkrótce!</p>
-            <p>Głównym kolorem linii jest granatowy, uzupełniony jasnym akcentem z logo.</p>
+        <div class="mya-info-grid">
+            <div class="mya-info-box"><span>Planowane otwarcie</span> <strong>WKRÓTCE / SOON</strong></div>
+            <div class="mya-info-box"><span>Kontakt</span> <strong>meyouair@gmail.com</strong></div>
         </div>
-        <div class="mya-description mya-description--accent">
-            <span class="mya-lang">EN</span>
-            <h2>Under Construction</h2>
-            <p>MeYouAir is a virtual airline for pilots who want to fly regularly. We are currently building our website and preparing our fleet.</p>
-            <p>The main airline color is navy blue with a bright accent from the logo.</p>
-        </div>
-    </div>
 
-    <div class="mya-actions">
-        <a class="mya-button" href="#"><span>Strona główna</span> <strong>Wkrótce</strong> </a>
-        <a class="mya-button mya-button--accent" href="#" target="_blank"><span>Discord</span> <strong>Soon</strong></a>
+        <div class="mya-description-grid">
+            <div class="mya-description">
+                <span class="mya-lang">PL</span>
+                <h2>Szykujemy flotę!</h2>
+                <p>Aktualnie pracujemy nad nową stroną internetową i systemami operacyjnymi dla naszych pilotów. MeYouAir połączy pasję do latania z profesjonalizmem NewSky.</p>
+            </div>
+            <div class="mya-description mya-description--accent">
+                <span class="mya-lang">EN</span>
+                <h2>Preparing the fleet!</h2>
+                <p>We are currently developing our website and flight operations systems. MeYouAir will soon provide the best virtual airline experience on NewSky.</p>
+            </div>
+        </div>
+
+        <div class="mya-actions">
+            <a class="mya-button" href="#"><span>Strona główna</span> <strong>Soon</strong></a>
+            <a class="mya-button mya-button--accent" href="#"><span>Discord</span> <strong>Soon</strong></a>
+        </div>
     </div>
 </div>
 
