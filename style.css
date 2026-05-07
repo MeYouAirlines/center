@@ -1,189 +1,86 @@
-:root {
-    --navy-dark: #070f24;
-    --navy-medium: #0d1b3e;
-    --lime: #d4e142;
-    --lime-glow: rgba(212, 225, 66, 0.4);
-    --text-white: #ffffff;
-    --text-dim: #b0b8d1;
-}
-
-* {
-    box-sizing: border-box;
+/* Podstawowe ustawienia */
+body {
     margin: 0;
     padding: 0;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--navy-dark);
-    color: var(--text-white);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #001f3f; /* Granatowy */
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-}
-
-.background-overlay {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle at 50% 50%, #0d1b3e 0%, #050a18 100%);
-    z-index: -1;
+    text-align: center;
 }
 
 .container {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    max-width: 600px;
     width: 90%;
-    max-width: 800px;
-    text-align: center;
-    padding: 20px 0;
+}
+
+/* Logo */
+.logo img {
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 20px;
 }
 
 /* Języki */
 .lang-switcher {
-    margin-bottom: 40px;
-}
-
-.lang-switcher button {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: var(--text-dim);
-    padding: 5px 15px;
-    cursor: pointer;
-    font-weight: 600;
-    border-radius: 4px;
-    margin: 0 5px;
-    transition: 0.3s;
-}
-
-.lang-switcher button.active {
-    background: var(--lime);
-    color: #000;
-    border-color: var(--lime);
-}
-
-/* Header */
-header {
     margin-bottom: 30px;
 }
 
-.logo-container {
+.lang-switcher button {
+    background-color: #f1c40f; /* Ciemny żółty */
+    border: none;
+    color: #001f3f;
+    padding: 8px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.lang-switcher button:hover {
+    background-color: #d4ac0d;
+}
+
+/* Treść */
+h1 {
+    color: #f1c40f;
+    font-size: 2.5rem;
     margin-bottom: 10px;
 }
 
-.main-logo {
-    width: 100px;
-    height: auto;
-}
-
-.brand-name {
-    font-size: 4rem;
-    font-weight: 900;
-    letter-spacing: -2px;
-    margin-bottom: 15px;
-}
-
-.brand-name span {
-    color: var(--lime);
-}
-
-.status-top {
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--text-white);
-    margin-bottom: 20px;
-}
-
-/* Glass Card */
-.glass-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 30px;
-    padding: 60px 40px;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-}
-
-h2 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 25px;
-    letter-spacing: -0.5px;
-}
-
 p {
-    color: var(--text-dim);
+    font-size: 1.1rem;
     line-height: 1.6;
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto 40px auto;
+    color: #ecf0f1;
 }
 
-.status-line {
-    font-size: 1.1rem;
-    margin-bottom: 25px;
-    font-weight: 400;
-}
-
-.status-line strong {
-    color: var(--text-white);
-}
-
-/* Przyciski */
-.cta-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
-.btn {
-    width: 200px;
-    height: 55px;
-    border-radius: 15px;
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 16px;
+.status {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #f1c40f;
     text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    background: var(--lime);
-    color: #000;
-    position: relative;
-    overflow: hidden;
+    letter-spacing: 1px;
 }
 
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px var(--lime-glow);
-    filter: brightness(1.1);
-}
-
-/* Przycisk Discord z efektem Soon */
-.btn-discord .text-hover {
-    display: none;
-    position: absolute;
-}
-
-.btn-discord:hover .text-default {
-    display: none;
-}
-
-.btn-discord:hover .text-hover {
-    display: block;
+/* Reklamy */
+.ads-container {
+    margin-top: 40px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    min-height: 100px;
+    border: 1px dashed #f1c40f;
 }
 
 footer {
-    margin-top: 50px;
-    font-size: 14px;
-    color: var(--text-dim);
-}
-
-/* Responsywność */
-@media (max-width: 600px) {
-    .brand-name { font-size: 2.8rem; }
-    h2 { font-size: 1.6rem; }
-    .cta-buttons { flex-direction: column; align-items: center; }
-    .btn { width: 100%; }
-    .glass-card { padding: 40px 20px; }
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: #bdc3c7;
 }
