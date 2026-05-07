@@ -3,88 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MeYouAir | Virtual Airline</title>
+    <title>MeYouAir - Prace techniczne / Maintenance</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- Google AdSense - Kod Główny -->
+    <!-- Tutaj wklej kod otrzymany od Google (script) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-TWOJ_ID_KLIENTA" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <div class="background-overlay"></div>
-
     <div class="container">
-        <!-- Przełącznik języka -->
+        <!-- Przełącznik języków -->
         <div class="lang-switcher">
-            <button onclick="setLanguage('pl')" id="btn-pl" class="active">PL</button>
-            <button onclick="setLanguage('en')" id="btn-en">EN</button>
+            <button onclick="setLanguage('pl')">PL</button>
+            <button onclick="setLanguage('en')">EN</button>
         </div>
 
-        <header>
-            <div class="logo-container">
-                <img src="logo.png" alt="MeYouAir Logo" class="main-logo">
-            </div>
-            <h1 class="brand-name">MeYou<span>Air</span></h1>
-            <!-- Status nad kartą -->
-            <div class="status-top lang-pl">Strona w budowie</div>
-            <div class="status-top lang-en" style="display:none;">Site under construction</div>
-        </header>
+        <!-- Logo -->
+        <div class="logo">
+            <img src="logo.png" alt="MeYouAir Logo">
+        </div>
 
-        <main class="glass-card">
-            <section class="content lang-pl">
-                <h2>Witaj w przyszłości wirtualnego latania</h2>
-                <p>MeYouAir to nowa inicjatywa w sieci NewSky. Tworzymy miejsce dla pilotów, którzy cenią realizm, profesjonalne procedury i świetną atmosferę.</p>
-                <div class="status-line"><strong>Status:</strong> Prace techniczne</div>
-            </section>
+        <!-- Treść Polska -->
+        <div id="content-pl" class="content">
+            <h1>Prace techniczne</h1>
+            <p>Przepraszamy, nasza strona jest obecnie w trakcie prac konserwacyjnych. Wrócimy wkrótce z nowymi funkcjami dla naszych pilotów!</p>
+            <div class="status">Status: W trakcie aktualizacji</div>
+        </div>
 
-            <section class="content lang-en" style="display:none;">
-                <h2>Welcome to the future of virtual flying</h2>
-                <p>MeYouAir is a new initiative within the NewSky network. We are creating a space for pilots who value realism, professional procedures, and a great atmosphere.</p>
-                <div class="status-line"><strong>Status:</strong> Maintenance</div>
-            </section>
+        <!-- Treść Angielska -->
+        <div id="content-en" class="content" style="display: none;">
+            <h1>Technical Maintenance</h1>
+            <p>Sorry, our website is currently undergoing maintenance. We will be back soon with new features for our pilots!</p>
+            <div class="status">Status: Updating in progress</div>
+        </div>
 
-            <div class="cta-buttons">
-                <a href="https://newsky.app/airline/mya/info" target="_blank" class="btn btn-primary">NewSky</a>
-                <a href="#" class="btn btn-discord">
-                    <span class="text-default">Discord</span>
-                    <span class="text-hover lang-pl">Wkrótce</span>
-                    <span class="text-hover lang-en" style="display:none;">Soon</span>
-                </a>
-            </div>
-        </main>
+        <!-- Miejsce na reklamę Google AdSense -->
+        <div class="ads-container">
+            <p style="font-size: 10px; color: #666; margin-bottom: 5px;">Reklama / Advertisement</p>
+            <!-- Tutaj wklej kod jednostki reklamowej Google AdSense -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-TWOJ_ID_KLIENTA"
+                 data-ad-slot="NUMER_SLOTU"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
 
         <footer>
-            <p>&copy; 2026 MeYouAir Operations.</p>
+            &copy; 2023 MeYouAir Virtual Airline
         </footer>
     </div>
 
     <script>
         function setLanguage(lang) {
-            const plElements = document.querySelectorAll('.lang-pl');
-            const enElements = document.querySelectorAll('.lang-en');
-            const btnPl = document.getElementById('btn-pl');
-            const btnEn = document.getElementById('btn-en');
-
+            const pl = document.getElementById('content-pl');
+            const en = document.getElementById('content-en');
+            
             if (lang === 'pl') {
-                plElements.forEach(el => {
-                    if(el.tagName === 'SPAN' && el.classList.contains('text-hover')) {
-                        el.style.display = ''; 
-                    } else {
-                        el.style.display = 'block';
-                    }
-                });
-                enElements.forEach(el => el.style.display = 'none');
-                btnPl.classList.add('active');
-                btnEn.classList.remove('active');
+                pl.style.display = 'block';
+                en.style.display = 'none';
+                document.documentElement.lang = 'pl';
             } else {
-                plElements.forEach(el => el.style.display = 'none');
-                enElements.forEach(el => {
-                    if(el.tagName === 'SPAN' && el.classList.contains('text-hover')) {
-                        el.style.display = ''; 
-                    } else {
-                        el.style.display = 'block';
-                    }
-                });
-                btnEn.classList.add('active');
-                btnPl.classList.remove('active');
+                pl.style.display = 'none';
+                en.style.display = 'block';
+                document.documentElement.lang = 'en';
             }
         }
     </script>
