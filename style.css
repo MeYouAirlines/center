@@ -1,86 +1,183 @@
-/* Podstawowe ustawienia */
-body {
+/* Główne zmienne kolorystyczne */
+:root {
+    --primary-blue: #0052CC; /* Kolor z Twojego logo */
+    --accent-blue: #00a2ff;
+    --dark-bg: #0a0f18;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #001f3f; /* Granatowy */
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--dark-bg);
     color: white;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Szklane tło (Glassmorphism) */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+}
+
+/* Nawigacja */
+nav {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    min-height: 100vh;
-    text-align: center;
+    padding: 1rem 5%;
+    background: rgba(10, 15, 24, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
 }
 
-.container {
-    background-color: rgba(255, 255, 255, 0.05);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    max-width: 600px;
-    width: 90%;
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-/* Logo */
-.logo img {
-    max-width: 250px;
-    height: auto;
-    margin-bottom: 20px;
+.logo-img {
+    height: 45px;
 }
 
-/* Języki */
-.lang-switcher {
-    margin-bottom: 30px;
+.nav-links {
+    display: flex;
+    gap: 2rem;
 }
 
-.lang-switcher button {
-    background-color: #f1c40f; /* Ciemny żółty */
-    border: none;
-    color: #001f3f;
-    padding: 8px 15px;
-    margin: 0 5px;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 5px;
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
     transition: 0.3s;
 }
 
-.lang-switcher button:hover {
-    background-color: #d4ac0d;
+.nav-links a:hover {
+    color: var(--accent-blue);
 }
 
-/* Treść */
-h1 {
-    color: #f1c40f;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(10, 20, 30, 0.7), rgba(10, 20, 30, 0.7)), 
+                url('https://images.unsplash.com/photo-1556388158-158ea5ccacbd?q=80&w=1920') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
 }
 
-p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #ecf0f1;
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
 }
 
-.status {
-    margin-top: 20px;
+.hero span {
+    color: var(--primary-blue);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+    padding: 12px 30px;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
     font-weight: bold;
-    color: #f1c40f;
+    box-shadow: 0 10px 20px rgba(0, 82, 204, 0.3);
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(0, 82, 204, 0.5);
+}
+
+/* Sekcje */
+section {
+    padding: 80px 10%;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Radar */
+.radar-wrapper {
+    height: 600px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* METAR */
+.metar-box {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+input {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid var(--glass-border);
+    padding: 12px;
+    color: white;
+    border-radius: 8px;
+    width: 200px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    margin-right: 10px;
 }
 
-/* Reklamy */
-.ads-container {
-    margin-top: 40px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    min-height: 100px;
-    border: 1px dashed #f1c40f;
+/* Flota - Grid */
+.fleet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
+.fleet-card {
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.fleet-card:hover {
+    transform: scale(1.05);
+}
+
+.fleet-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.fleet-info {
+    padding: 20px;
+}
+
+/* Stopka */
 footer {
-    margin-top: 30px;
-    font-size: 0.8rem;
-    color: #bdc3c7;
+    padding: 50px 10%;
+    text-align: center;
+    border-top: 1px solid var(--glass-border);
+    color: #666;
 }
