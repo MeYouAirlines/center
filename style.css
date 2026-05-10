@@ -1,183 +1,224 @@
-/* Główne zmienne kolorystyczne */
 :root {
-    --primary-blue: #0052CC; /* Kolor z Twojego logo */
-    --accent-blue: #00a2ff;
-    --dark-bg: #0a0f18;
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
+    --primary-blue: #002855;
+    --accent-yellow: #EAAA00;
+    --dark-yellow: #C69200;
+    --bg-dark: #05070a;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --border: rgba(234, 170, 0, 0.2);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--dark-bg);
-    color: white;
-    line-height: 1.6;
-    scroll-behavior: smooth;
+    background-color: var(--bg-dark);
+    color: #ffffff;
+    overflow-x: hidden;
 }
 
-/* Szklane tło (Glassmorphism) */
-.glass {
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
-}
-
-/* Nawigacja */
+/* Nowoczesny Pasek Nawigacji */
 nav {
     position: fixed;
+    top: 0;
     width: 100%;
-    z-index: 1000;
+    height: 80px;
+    background: rgba(0, 40, 85, 0.95);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
-    background: rgba(10, 15, 24, 0.8);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--glass-border);
+    padding: 0 5%;
+    z-index: 1000;
+    border-bottom: 2px solid var(--accent-yellow);
 }
 
-.logo-container {
+.logo-section {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
 }
 
-.logo-img {
-    height: 45px;
+.logo-section img {
+    height: 50px;
 }
 
-.nav-links {
+.logo-text {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.logo-text span {
+    color: var(--accent-yellow);
+}
+
+.nav-menu {
     display: flex;
-    gap: 2rem;
+    gap: 30px;
 }
 
-.nav-links a {
+.nav-menu a {
     color: white;
     text-decoration: none;
     font-weight: 500;
+    font-size: 0.9rem;
     transition: 0.3s;
+    text-transform: uppercase;
 }
 
-.nav-links a:hover {
-    color: var(--accent-blue);
+.nav-menu a:hover {
+    color: var(--accent-yellow);
+}
+
+.discord-soon {
+    background: #5865F2;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    cursor: not-allowed;
+    border: none;
 }
 
 /* Hero Section */
 .hero {
-    height: 100vh;
-    background: linear-gradient(rgba(10, 20, 30, 0.7), rgba(10, 20, 30, 0.7)), 
-                url('https://images.unsplash.com/photo-1556388158-158ea5ccacbd?q=80&w=1920') no-repeat center center/cover;
+    height: 80vh;
+    background: linear-gradient(rgba(5, 7, 10, 0.6), rgba(5, 7, 10, 0.9)), 
+                url('https://images.unsplash.com/photo-1542296332-2e4473faf563?q=80&w=1920');
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0 20px;
+    padding-top: 80px;
 }
 
 .hero h1 {
-    font-size: 4rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
+    font-size: 4.5rem;
+    margin-bottom: 10px;
+    line-height: 1;
 }
 
-.hero span {
-    color: var(--primary-blue);
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
-    padding: 12px 30px;
-    border-radius: 50px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 10px 20px rgba(0, 82, 204, 0.3);
-    transition: 0.3s;
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 25px rgba(0, 82, 204, 0.5);
-}
-
-/* Sekcje */
-section {
-    padding: 80px 10%;
-}
-
-h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
+.hero p {
+    color: var(--accent-yellow);
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
 }
 
 /* Radar */
-.radar-wrapper {
+.section-title {
+    padding: 50px 5% 20px;
+    border-left: 5px solid var(--accent-yellow);
+    margin: 40px 5%;
+    background: rgba(234, 170, 0, 0.05);
+}
+
+.radar-container {
+    width: 90%;
+    margin: 0 auto 50px;
     height: 600px;
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid var(--glass-border);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-}
-
-/* METAR */
-.metar-box {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;
-}
-
-input {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid var(--glass-border);
-    padding: 12px;
-    color: white;
+    border: 1px solid var(--accent-yellow);
     border-radius: 8px;
-    width: 200px;
-    text-transform: uppercase;
-    margin-right: 10px;
-}
-
-/* Flota - Grid */
-.fleet-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.fleet-card {
-    border-radius: 20px;
     overflow: hidden;
+}
+
+/* Nowe Ficzery - Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 0 5% 50px;
+}
+
+.feature-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 30px;
+    border-radius: 4px;
     transition: 0.3s;
 }
 
-.fleet-card:hover {
-    transform: scale(1.05);
+.feature-card:hover {
+    border-color: var(--accent-yellow);
+    background: rgba(234, 170, 0, 0.03);
 }
 
-.fleet-card img {
+.feature-card i {
+    color: var(--accent-yellow);
+    font-size: 2rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+    color: var(--accent-yellow);
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* Flight Tools */
+.tools-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 5%;
+}
+
+.metar-search {
+    flex: 2;
+    background: var(--primary-blue);
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.tool-box {
+    flex: 1;
+    background: #111;
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+input {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    padding: 12px;
+    margin: 10px 0;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--accent-yellow);
+    color: white;
 }
 
-.fleet-info {
-    padding: 20px;
+.btn {
+    background: var(--accent-yellow);
+    color: black;
+    border: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
 }
 
-/* Stopka */
+.btn:hover {
+    background: var(--dark-yellow);
+}
+
 footer {
-    padding: 50px 10%;
     text-align: center;
-    border-top: 1px solid var(--glass-border);
-    color: #666;
+    padding: 40px;
+    border-top: 1px solid #222;
+    margin-top: 50px;
+    background: #001a38;
 }
