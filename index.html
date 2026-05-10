@@ -3,166 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MeyouAir Executive | VA</title>
+    <title>MeyouAir | Virtual Airline Executive</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Sidebar -->
+    <!-- Nawigacja Boczna -->
     <nav id="sidebar">
-        <div style="text-align: center; margin-bottom: 30px;">
-            <img src="logo.png" alt="MeyouAir" style="height: 60px;">
-        </div>
-        
+        <img src="logo.png" alt="MeyouAir" style="width: 100%; margin-bottom: 40px;">
         <div class="nav-links">
-            <a href="#home" onclick="toggleMenu()"><i class="fa fa-home"></i> <span class="lang-pl">Start</span><span class="lang-en">Home</span></a>
-            <a href="#radar" onclick="toggleMenu()"><i class="fa fa-satellite"></i> <span class="lang-pl">Radar Live</span><span class="lang-en">Live Radar</span></a>
-            <a href="#hubs" onclick="toggleMenu()"><i class="fa fa-map-marker-alt"></i> <span class="lang-pl">Nasze Bazy</span><span class="lang-en">Our Hubs</span></a>
-            <a href="#tools" onclick="toggleMenu()"><i class="fa fa-tools"></i> <span class="lang-pl">Narzędzia</span><span class="lang-en">Pilot Tools</span></a>
-            <a href="#staff" onclick="toggleMenu()"><i class="fa fa-users"></i> <span class="lang-pl">Zarząd</span><span class="lang-en">Management</span></a>
-            <a href="https://newsky.app/airline/MYA" target="_blank" style="background:var(--gold); color:black; font-weight:bold;"><i class="fa fa-external-link-alt"></i> NewSky Panel</a>
+            <a href="#home" onclick="toggleMenu()"><i class="fa fa-plane"></i> <span class="lang-pl">Start</span><span class="lang-en">Home</span></a>
+            <a href="#radar" onclick="toggleMenu()"><i class="fa fa-satellite-dish"></i> <span class="lang-pl">Radar Live</span><span class="lang-en">Live Radar</span></a>
+            <a href="#hubs" onclick="toggleMenu()"><i class="fa fa-map-location-dot"></i> <span class="lang-pl">Nasze Huby</span><span class="lang-en">Our Hubs</span></a>
+            <a href="#tools" onclick="toggleMenu()"><i class="fa fa-microchip"></i> <span class="lang-pl">Systemy</span><span class="lang-en">Systems</span></a>
+            <a href="#staff" onclick="toggleMenu()"><i class="fa fa-user-shield"></i> <span class="lang-pl">Zarząd</span><span class="lang-en">Management</span></a>
+            <a href="https://newsky.app/airline/MYA" target="_blank" style="margin-top:20px; border: 1px solid var(--accent); color: var(--accent);">NewSky Panel</a>
         </div>
-
-        <div class="lang-switch">
-            <button class="lang-btn active" onclick="setLang('pl')">PL</button>
-            <button class="lang-btn" onclick="setLang('en')">EN</button>
+        <div style="position:absolute; bottom: 30px; display:flex; gap:10px;">
+            <button onclick="setLang('pl')" style="background:none; border:1px solid var(--accent); color:white; cursor:pointer; padding:5px 10px;">PL</button>
+            <button onclick="setLang('en')" style="background:none; border:1px solid var(--accent); color:white; cursor:pointer; padding:5px 10px;">EN</button>
         </div>
     </nav>
 
     <button class="menu-btn" onclick="toggleMenu()">
-        <i class="fa fa-bars"></i> MENU
+        <i class="fa fa-bars"></i>
     </button>
 
-    <main id="main-content">
+    <main>
         <!-- Hero Section -->
         <header class="hero" id="home">
-            <img src="logo.png" alt="Logo">
-            <h1>MEYOU<span>AIR</span></h1>
-            <p class="lang-pl" style="letter-spacing: 5px; color: var(--gold);">ELITARNE OPERACJE WIRTUALNE</p>
-            <p class="lang-en" style="letter-spacing: 5px; color: var(--gold); display:none;">ELITE VIRTUAL OPERATIONS</p>
+            <div class="reveal">
+                <p class="lang-pl" style="letter-spacing: 8px; color: var(--accent); font-weight: bold;">WIRTUALNE LINIE LOTNICZE</p>
+                <p class="lang-en" style="letter-spacing: 8px; color: var(--accent); font-weight: bold; display:none;">VIRTUAL AIRLINE OPERATIONS</p>
+                <h1>MEYOU<span>AIR</span></h1>
+            </div>
         </header>
 
-        <!-- Dynamic Stats Bar -->
-        <div class="stats-bar">
-            <div class="stat-card">
+        <!-- Stats Bar -->
+        <div class="stats-container reveal">
+            <div class="stat-box">
                 <h4 class="lang-pl">Czas Zulu</h4><h4 class="lang-en" style="display:none;">Zulu Time</h4>
                 <p id="zulu-clock">00:00:00</p>
             </div>
-            <div class="stat-card">
-                <h4 class="lang-pl">Pasażerowie w locie</h4><h4 class="lang-en" style="display:none;">Passengers Live</h4>
-                <p id="pax-counter">1,248</p>
-            </div>
-            <div class="stat-card">
-                <h4 class="lang-pl">Status Operacji</h4><h4 class="lang-en" style="display:none;">Ops Status</h4>
-                <p style="color: #00ff00;">ONLINE</p>
+            <div class="stat-box">
+                <h4 class="lang-pl">Status Operacji</h4><h4 class="lang-en" style="display:none;">Operations</h4>
+                <p style="color: #00ff00;">ACTIVE</p>
             </div>
         </div>
 
-        <!-- Radar Section -->
+        <!-- Radar -->
         <section id="radar">
-            <div class="section-title">
-                <h2><span>01.</span> <span class="lang-pl">Radar Pogodowy</span><span class="lang-en" style="display:none;">Weather Radar</span></h2>
+            <div class="title-line reveal">
+                <h2><span>01.</span> <span class="lang-pl">Centrum Monitoringu Live</span><span class="lang-en" style="display:none;">Live Monitoring Center</span></h2>
             </div>
-            <div class="radar-wrap">
+            <div class="radar-frame reveal">
                 <iframe width="100%" height="100%" src="https://embed.windy.com/embed2.html?lat=52.229&lon=21.011&zoom=5&level=surface&overlay=radar&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=kt&metricTemp=%C2%B0C&radarRange=-1" frameborder="0"></iframe>
             </div>
         </section>
 
-        <!-- Hubs Section -->
+        <!-- Hubs -->
         <section id="hubs">
-            <div class="section-title">
-                <h2><span>02.</span> <span class="lang-pl">Główne Bazy</span><span class="lang-en" style="display:none;">Main Hubs</span></h2>
+            <div class="title-line reveal">
+                <h2><span>02.</span> <span class="lang-pl">Główne Bazy Operacyjne</span><span class="lang-en" style="display:none;">Main Hubs</span></h2>
             </div>
-            <div class="hub-grid">
+            <div class="hub-grid reveal">
                 <div class="hub-card">
                     <h3>WAW / EPWA</h3>
-                    <p class="lang-pl">Warszawa Chopin - Główna baza operacyjna linii MeyouAir.</p>
-                    <p class="lang-en" style="display:none;">Warsaw Chopin - Main operating base for MeyouAir.</p>
-                    <small style="color:var(--gold)">GATE COUNT: 45</small>
+                    <p class="lang-pl">Warszawa Chopin - Nasze serce operacyjne. Stąd koordynujemy wszystkie rejsy europejskie.</p>
+                    <p class="lang-en" style="display:none;">Warsaw Chopin - Our operational heart. Coordination for all European flights.</p>
                 </div>
                 <div class="hub-card">
-                    <h3>LHR / EGLL</h3>
-                    <p class="lang-pl">Londyn Heathrow - Nasze okno na świat dla lotów długodystansowych.</p>
-                    <p class="lang-en" style="display:none;">London Heathrow - Our gateway for long-haul operations.</p>
-                    <small style="color:var(--gold)">GATE COUNT: 12</small>
+                    <h3>GDN / EPGD</h3>
+                    <p class="lang-pl">Gdańsk im. Lecha Wałęsy - Kluczowy punkt dla operacji bałtyckich i skandynawskich.</p>
+                    <p class="lang-en" style="display:none;">Gdansk Lech Walesa - Key point for Baltic and Scandinavian operations.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Tools Section -->
+        <!-- Tools -->
         <section id="tools">
-            <div class="section-title">
-                <h2><span>03.</span> <span class="lang-pl">Centrum Pilota</span><span class="lang-en" style="display:none;">Pilot Center</span></h2>
+            <div class="title-line reveal">
+                <h2><span>03.</span> <span class="lang-pl">Narzędzia Pilota</span><span class="lang-en" style="display:none;">Pilot Dispatch</span></h2>
             </div>
-            <div class="tools-grid">
-                <div class="tool-box">
-                    <h3 class="lang-pl">Pobierz METAR</h3><h3 class="lang-en" style="display:none;">Get METAR</h3>
-                    <input type="text" id="icaoInput" placeholder="ICAO (np. EPWA)">
-                    <button class="gold-btn" onclick="fetchMetar()">Fetch Data</button>
-                    <div id="metarResult" style="margin-top:20px; font-family: monospace; color:var(--gold)"></div>
+            <div class="hub-grid reveal">
+                <div class="hub-card">
+                    <h3 class="lang-pl">Pogoda METAR</h3><h3 class="lang-en" style="display:none;">METAR Data</h3>
+                    <input type="text" id="icaoInput" class="tool-input" placeholder="ICAO (np. EPGD)">
+                    <button onclick="fetchMetar()" style="background:var(--accent); border:none; padding:10px 20px; font-weight:bold; cursor:pointer;">CHECK</button>
+                    <div id="metarResult" style="margin-top:15px; font-family:monospace; color:var(--accent)"></div>
                 </div>
-                <div class="tool-box">
-                    <h3>Fuel Calc</h3>
-                    <p>KG to LBS Converter</p>
-                    <input type="number" id="kg" oninput="convert(this, 'lbs')" placeholder="Kilograms">
-                    <input type="number" id="lbs" oninput="convert(this, 'kg')" placeholder="Pounds">
+                <div class="hub-card">
+                    <h3>Unit Converter</h3>
+                    <div style="display:flex; gap:10px;">
+                        <input type="number" id="kg" class="tool-input" placeholder="KG" oninput="convert(this, 'lbs')">
+                        <input type="number" id="lbs" class="tool-input" placeholder="LBS" oninput="convert(this, 'kg')">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Staff Section -->
+        <!-- Staff -->
         <section id="staff">
-            <div class="section-title">
-                <h2><span>04.</span> <span class="lang-pl">Zarząd</span><span class="lang-en" style="display:none;">Management Staff</span></h2>
+            <div class="title-line reveal">
+                <h2><span>04.</span> <span class="lang-pl">Zarząd MeyouAir</span><span class="lang-en" style="display:none;">Management Staff</span></h2>
             </div>
-            <div class="hub-grid">
-                <div class="hub-card" style="text-align:center;">
-                    <i class="fa fa-user-tie fa-3x" style="margin-bottom:15px; color:var(--gold)"></i>
-                    <h3>CEO & Founder</h3>
-                    <p>MeyouAir_One</p>
+            <div class="hub-grid reveal">
+                <div class="staff-card">
+                    <i class="fa fa-user-tie"></i>
+                    <h3>Maciek Krokiet</h3>
+                    <p>Chief Executive Officer</p>
                 </div>
-                <div class="hub-card" style="text-align:center;">
-                    <i class="fa fa-plane-config fa-3x" style="margin-bottom:15px; color:var(--gold)"></i>
+                <div class="staff-card">
+                    <i class="fa fa-plane-up"></i>
                     <h3>Flight Ops Manager</h3>
-                    <p>VACANT (Aplikuj!)</p>
+                    <p>VACANT</p>
                 </div>
             </div>
         </section>
 
         <footer>
-            <img src="logo.png" alt="MeyouAir" style="height: 50px; margin-bottom: 20px; filter: grayscale(1);">
-            <p>MeyouAir Virtual Airline - Simulation Only</p>
-            <div class="discord-soon">DISCORD SERVER: SOON</div>
+            <p>© 2025 MeyouAir Virtual Airline. For Flight Simulation Use Only.</p>
+            <div style="margin-top:20px; color:#5865F2; font-weight:bold; letter-spacing:2px;">DISCORD SERVER: SOON</div>
         </footer>
     </main>
 
     <script>
-        // Sidebar Toggle
-        function toggleMenu() {
-            document.getElementById('sidebar').classList.toggle('active');
-        }
+        function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }
 
-        // Language Switcher
         function setLang(lang) {
-            const plElements = document.querySelectorAll('.lang-pl');
-            const enElements = document.querySelectorAll('.lang-en');
-            const btns = document.querySelectorAll('.lang-btn');
-
-            btns.forEach(b => b.classList.remove('active'));
+            const pl = document.querySelectorAll('.lang-pl');
+            const en = document.querySelectorAll('.lang-en');
             if(lang === 'pl') {
-                plElements.forEach(e => e.style.display = 'block');
-                enElements.forEach(e => e.style.display = 'none');
-                btns[0].classList.add('active');
+                pl.forEach(e => e.style.display = 'block');
+                en.forEach(e => e.style.display = 'none');
             } else {
-                plElements.forEach(e => e.style.display = 'none');
-                enElements.forEach(e => e.style.display = 'block');
-                btns[1].classList.add('active');
+                pl.forEach(e => e.style.display = 'none');
+                en.forEach(e => e.style.display = 'block');
             }
         }
 
-        // Zulu Clock
         function updateZulu() {
             const now = new Date();
             const time = now.toISOString().split('T')[1].split('.')[0];
@@ -170,18 +151,10 @@
         }
         setInterval(updateZulu, 1000);
 
-        // Simulated Pax Counter
-        let pax = 1248;
-        setInterval(() => {
-            pax += Math.floor(Math.random() * 5) - 2;
-            document.getElementById('pax-counter').innerText = pax.toLocaleString();
-        }, 3000);
-
-        // Tools
         function fetchMetar() {
             const icao = document.getElementById('icaoInput').value.toUpperCase();
             if(icao.length < 4) return;
-            document.getElementById('metarResult').innerText = `${icao} 281430Z 26010KT 9999 FEW030 18/12 Q1013`;
+            document.getElementById('metarResult').innerText = `${icao} 201230Z 28012KT 9999 FEW030 14/08 Q1012`;
         }
 
         function convert(el, target) {
@@ -189,6 +162,15 @@
             if(target === 'lbs') document.getElementById('lbs').value = Math.round(val * 2.204);
             else document.getElementById('kg').value = Math.round(val / 2.204);
         }
+
+        // Simple Reveal Animation on Scroll
+        window.addEventListener('scroll', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(r => {
+                const top = r.getBoundingClientRect().top;
+                if(top < window.innerHeight - 100) r.style.opacity = '1';
+            });
+        });
     </script>
 </body>
 </html>
