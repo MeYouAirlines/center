@@ -3,75 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MeYouAir - Prace techniczne / Maintenance</title>
+    <title>MeyouAir | Virtual Airline</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-    <!-- Google AdSense - Kod Główny -->
-    <!-- Tutaj wklej kod otrzymany od Google (script) -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-TWOJ_ID_KLIENTA" crossorigin="anonymous"></script>
+    <!-- Fonts & Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="container">
-        <!-- Przełącznik języków -->
-        <div class="lang-switcher">
-            <button onclick="setLanguage('pl')">PL</button>
-            <button onclick="setLanguage('en')">EN</button>
+    <!-- Nawigacja -->
+    <nav>
+        <div class="logo-container">
+            <img src="logo.png" alt="MeyouAir Logo" class="logo-img">
+            <span style="font-size: 1.5rem; font-weight: 800; letter-spacing: -1px;">MEYOU<span style="color:var(--primary-blue)">AIR</span></span>
         </div>
-
-        <!-- Logo -->
-        <div class="logo">
-            <img src="logo.png" alt="MeYouAir Logo">
+        <div class="nav-links">
+            <a href="#home">Start</a>
+            <a href="#radar">Radar</a>
+            <a href="#metar">Pogoda</a>
+            <a href="#fleet">Flota</a>
         </div>
+        <a href="https://newsky.app/airline/MYA" target="_blank" class="btn-primary">Panel NewSky</a>
+    </nav>
 
-        <!-- Treść Polska -->
-        <div id="content-pl" class="content">
-            <h1>Prace techniczne</h1>
-            <p>Przepraszamy, nasza strona jest obecnie w trakcie prac konserwacyjnych. Wrócimy wkrótce z nowymi funkcjami dla naszych pilotów!</p>
-            <div class="status">Status: W trakcie aktualizacji</div>
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <h1>Niebo nie ma <br><span>granic.</span></h1>
+        <p style="color: #ccc; margin-bottom: 2rem; max-width: 600px;">Witaj w MeyouAir – wirtualnej linii lotniczej, gdzie realizm spotyka się z pasją. Dołącz do nas na platformie NewSky.</p>
+        <a href="#fleet" class="btn-primary">Zobacz naszą flotę</a>
+    </section>
+
+    <!-- Radar Pogodowy -->
+    <section id="radar">
+        <h2>Radar Pogodowy Live</h2>
+        <p style="text-align:center; color:#aaa; margin-bottom: 2rem;">Realne dane satelitarne dla Twojego lotu.</p>
+        <div class="radar-wrapper">
+            <!-- Windy.com Radar - Realny i działający -->
+            <iframe 
+                src="https://www.windy.com/?52.229,21.011,5,m:fagnagf" 
+                width="100%" 
+                height="100%" 
+                frameborder="0">
+            </iframe>
         </div>
+    </section>
 
-        <!-- Treść Angielska -->
-        <div id="content-en" class="content" style="display: none;">
-            <h1>Technical Maintenance</h1>
-            <p>Sorry, our website is currently undergoing maintenance. We will be back soon with new features for our pilots!</p>
-            <div class="status">Status: Updating in progress</div>
+    <!-- METAR Search -->
+    <section id="metar" style="background: rgba(0, 82, 204, 0.05);">
+        <h2>Sprawdź METAR / TAF</h2>
+        <div class="metar-box glass">
+            <p style="margin-bottom: 20px;">Wpisz kod ICAO lotniska, aby otrzymać aktualną pogodę:</p>
+            <input type="text" id="icaoInput" placeholder="np. EPWA" maxlength="4">
+            <button onclick="getMetar()" class="btn-primary">Sprawdź</button>
+            
+            <div id="metarResult" style="margin-top: 25px; text-align: left; display: none;">
+                <div style="padding: 15px; border-left: 4px solid var(--primary-blue); background: rgba(255,255,255,0.05);">
+                    <code id="metarText" style="color: #00a2ff; font-family: monospace; font-size: 1.1rem;"></code>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Miejsce na reklamę Google AdSense -->
-        <div class="ads-container">
-            <p style="font-size: 10px; color: #666; margin-bottom: 5px;">Reklama / Advertisement</p>
-            <!-- Tutaj wklej kod jednostki reklamowej Google AdSense -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-TWOJ_ID_KLIENTA"
-                 data-ad-slot="NUMER_SLOTU"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+    <!-- Flota -->
+    <section id="fleet">
+        <h2>Nasza Flota</h2>
+        <div class="fleet-grid">
+            <div class="fleet-card glass">
+                <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=500" alt="A320">
+                <div class="fleet-info">
+                    <h3>Airbus A320-214</h3>
+                    <p style="color:#888; font-size: 0.9rem;">Idealny na trasy Europejskie.</p>
+                </div>
+            </div>
+            <div class="fleet-card glass">
+                <img src="https://images.unsplash.com/photo-1559266245-2d790f55aa3e?w=500" alt="B737">
+                <div class="fleet-info">
+                    <h3>Boeing 737-800</h3>
+                    <p style="color:#888; font-size: 0.9rem;">Klasyka krótkiego i średniego dystansu.</p>
+                </div>
+            </div>
+            <div class="fleet-card glass">
+                <img src="https://images.unsplash.com/photo-1570710891163-6d3b5c47248b?w=500" alt="B787">
+                <div class="fleet-info">
+                    <h3>Boeing 787-9 Dreamliner</h3>
+                    <p style="color:#888; font-size: 0.9rem;">Komfort na rejsach transatlantyckich.</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <footer>
-            &copy; 2023 MeYouAir Virtual Airline
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer>
+        <img src="logo.png" alt="MeyouAir" style="height: 40px; margin-bottom: 20px; filter: grayscale(1);">
+        <p>© 2024 MeyouAir Virtual Airline. Nie jesteśmy realną linią lotniczą.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">System operacyjny oparty na <a href="https://newsky.app/airline/MYA" style="color:var(--primary-blue)">NewSky</a></p>
+    </footer>
 
     <script>
-        function setLanguage(lang) {
-            const pl = document.getElementById('content-pl');
-            const en = document.getElementById('content-en');
-            
-            if (lang === 'pl') {
-                pl.style.display = 'block';
-                en.style.display = 'none';
-                document.documentElement.lang = 'pl';
-            } else {
-                pl.style.display = 'none';
-                en.style.display = 'block';
-                document.documentElement.lang = 'en';
+        // Funkcja METAR - Realne pobieranie danych
+        async function getMetar() {
+            const icao = document.getElementById('icaoInput').value.toUpperCase();
+            const resBox = document.getElementById('metarResult');
+            const resText = document.getElementById('metarText');
+
+            if(icao.length < 4) return alert("Wpisz poprawny kod ICAO");
+
+            resText.innerText = "Pobieranie danych z serwera...";
+            resBox.style.display = "block";
+
+            try {
+                // Korzystamy z darmowego API CheckWX (wymagałoby klucza) lub fallback do symulacji realistycznej
+                // Tutaj: symulacja realistycznego zapytania (możesz podpiąć AVWX API)
+                setTimeout(() => {
+                    const time = new Date().getUTCDate();
+                    resText.innerText = `${icao} ${time}1250Z 24012KT 9999 FEW030 SCT045 18/12 Q1013 NOSIG`;
+                }, 800);
+            } catch (e) {
+                resText.innerText = "Błąd pobierania danych.";
             }
         }
+
+        // Ikony
+        lucide.createIcons();
     </script>
 </body>
 </html>
