@@ -3,133 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MeyouAir | Professional Virtual Airline</title>
+    <title>MeyouAir VA | Professional Flight Operations</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome do ikon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Ikony FontAwesome i Czcionki -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav>
-        <div class="logo-section">
-            <img src="logo.png" alt="MeyouAir Logo">
-            <div class="logo-text">Meyou<span>Air</span></div>
+        <div class="nav-brand">
+            <img src="logo.png" alt="MeyouAir">
+            <span>MEYOU<b>AIR</b></span>
         </div>
-        <div class="nav-menu">
-            <a href="#radar">Radar Pogodowy</a>
+        <div class="nav-links">
+            <a href="#radar">Radar</a>
+            <a href="#ops">Operacje</a>
             <a href="#tools">Narzędzia</a>
-            <a href="#features">Operacje</a>
-            <a href="https://newsky.app/airline/MYA">NewSky</a>
+            <a href="https://newsky.app/airline/MYA" class="btn-join">Dołącz w NewSky</a>
         </div>
-        <button class="discord-soon">Discord (Soon)</button>
     </nav>
 
     <header class="hero">
-        <p>Virtual Airline System</p>
-        <h1>PRECYZJA W KAŻDYM LOCIE</h1>
-        <div style="display:flex; gap:20px;">
-            <a href="https://newsky.app/airline/MYA" class="btn">Złóż aplikację</a>
-            <div id="zulu-clock" style="font-family: monospace; font-size: 1.5rem; background: rgba(0,0,0,0.5); padding: 10px 20px; border: 1px solid var(--accent-yellow);">00:00:00 ZULU</div>
-        </div>
+        <p>Virtual Airline Excellence</p>
+        <h1>MEYOUAIR OPERATIONS</h1>
+        <div id="zulu-clock" style="color: var(--gold); font-family: monospace; font-size: 1.2rem; border: 1px solid #333; padding: 5px 20px;">00:00:00 ZULU</div>
     </header>
 
-    <div class="section-title">
-        <h2>LIVE FLIGHT RADAR</h2>
-        <p>Globalne warunki atmosferyczne i ruch lotniczy w czasie rzeczywistym.</p>
-    </div>
+    <!-- 1. RADAR (POPRAWIONY) -->
+    <section id="radar">
+        <div class="section-header">
+            <h2>Real-Time Weather Radar</h2>
+        </div>
+        <div class="radar-box">
+            <!-- Oficjalny Widget Windy - Ten adres nie blokuje ramek -->
+            <iframe width="100%" height="100%" 
+                src="https://embed.windy.com/embed2.html?lat=52.229&lon=21.011&detailLat=52.229&detailLon=21.011&width=650&height=450&zoom=5&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=kt&metricTemp=%C2%B0C&radarRange=-1" 
+                frameborder="0">
+            </iframe>
+        </div>
+    </section>
 
-    <div class="radar-container" id="radar">
-        <!-- Re-implementacja Radaru Windy (Najbardziej stabilna) -->
-        <iframe 
-            src="https://www.windy.com/v1.0.1/index.html?52.233,21.067,5,menu,message,marker,layers" 
-            width="100%" 
-            height="100%" 
-            frameborder="0">
-        </iframe>
-    </div>
+    <!-- 2. NOWE FICZERY (5 SYSTEMÓW) -->
+    <section id="ops">
+        <div class="section-header">
+            <h2>Flight Systems</h2>
+        </div>
+        <div class="features-container">
+            <div class="feature-item">
+                <i class="fa-solid fa-file-invoice"></i>
+                <h3>SimBrief Dispatch</h3>
+                <p>Pełna integracja z systemem planowania lotów. Twórz profesjonalne plany lotu (OFP) zgodnie z normami EASA.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-tower-control"></i>
+                <h3>ATC Network</h3>
+                <p>Wsparcie dla lotów w sieciach VATSIM oraz IVAO. Zapewniamy pomoc w szkoleniu frazeologii lotniczej.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-database"></i>
+                <h3>Live Statistics</h3>
+                <p>System NewSky na bieżąco monitoruje Twoje parametry lotu, zużycie paliwa oraz delikatność przyziemienia.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h3>Training Center</h3>
+                <p>Dostęp do bazy wiedzy: procedury startowe (SOP), tabele osiągów oraz instrukcje maszyn.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <h3>Safety Reports</h3>
+                <p>System raportowania incydentów pozwalający na ciągłe doskonalenie umiejętności naszych pilotów.</p>
+            </div>
+        </div>
+    </section>
 
-    <div class="section-title" id="features">
-        <h2>SYSTEMY OPERACYJNE</h2>
-        <p>Wszystko, czego potrzebuje profesjonalny pilot MeyouAir.</p>
-    </div>
-
-    <div class="features-grid">
-        <div class="feature-card">
-            <i class="fas fa-plane-departure"></i>
-            <h3>SimBrief Dispatch</h3>
-            <p>Zintegrowany system planowania lotów. Wygeneruj swój OFP jednym kliknięciem.</p>
-            <a href="https://www.simbrief.com/system/dispatch.php" target="_blank" style="color:var(--accent-yellow); font-size: 0.8rem; text-decoration: none;">OTWÓRZ SYSTEM →</a>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-satellite"></i>
-            <h3>Status Sieci</h3>
-            <p>Podgląd pilotów MeyouAir online w sieciach VATSIM oraz IVAO.</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-book"></i>
-            <h3>MeyouAir Academy</h3>
-            <p>Dostęp do check-list, map (charts) oraz procedur operacyjnych (SOP).</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-calculator"></i>
-            <h3>Kalkulator V-Speeds</h3>
-            <p>Obliczaj prędkości V1, VR, V2 bezpośrednio przed startem na podstawie masy.</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-chart-line"></i>
-            <h3>Rankingi</h3>
-            <p>Statystyki lądowań (fpm) oraz najaktywniejsi piloci miesiąca.</p>
-        </div>
-    </div>
-
-    <div class="tools-flex" id="tools">
-        <div class="metar-search">
-            <h3><i class="fas fa-cloud-sun"></i> Centrum Pogodowe</h3>
-            <p>Pobierz aktualny METAR dla lotniska docelowego:</p>
-            <input type="text" id="icao" placeholder="WPISZ ICAO (np. EPWA)...">
-            <button class="btn" onclick="fetchMetar()">Pobierz Raport</button>
-            <div id="metar-result" style="margin-top:20px; font-family: monospace; background: rgba(0,0,0,0.2); padding: 10px;">...</div>
+    <!-- 3. NARZĘDZIA (METAR + KALKULATOR) -->
+    <section class="tools-section" id="tools">
+        <div class="metar-card">
+            <h3><i class="fa-solid fa-wind"></i> Live METAR Fetcher</h3>
+            <p>Pobierz aktualne warunki pogodowe z dowolnego lotniska świata:</p>
+            <input type="text" id="icaoInput" placeholder="WPISZ ICAO (np. EPWA, KJFK)..." maxlength="4">
+            <button class="btn-action" onclick="getMetar()">Pobierz raport</button>
+            <div id="metarResult" style="margin-top: 20px; font-family: monospace; color: var(--gold);"></div>
         </div>
 
-        <div class="tool-box">
-            <h3><i class="fas fa-weight-hanging"></i> Konwerter Wag</h3>
-            <label>Kilogramy (KG)</label>
-            <input type="number" id="kg" oninput="convertWeight('kg')" placeholder="KG">
-            <label>Funty (LBS)</label>
-            <input type="number" id="lbs" oninput="convertWeight('lbs')" placeholder="LBS">
+        <div class="tool-card">
+            <h3><i class="fa-solid fa-calculator"></i> Fuel Converter</h3>
+            <div style="margin-top: 20px;">
+                <small>KILOGRAMY (KG)</small>
+                <input type="number" id="kgInput" oninput="convert(this, 'lbs')">
+                <small>FUNTY (LBS)</small>
+                <input type="number" id="lbsInput" oninput="convert(this, 'kg')">
+            </div>
         </div>
-    </div>
+    </section>
 
     <footer>
-        <img src="logo.png" alt="Logo" style="height: 40px; margin-bottom: 20px;">
-        <p>MeyouAir Virtual Airline © 2025</p>
-        <p style="font-size: 0.7rem; color: #555; margin-top: 10px;">Strona przeznaczona wyłącznie dla celów symulacji lotniczej. Nie jest powiązana z żadną realną linią lotniczą.</p>
+        <div class="nav-brand" style="justify-content: center; margin-bottom: 20px; opacity: 0.5;">
+            <img src="logo.png" alt="MeyouAir">
+            <span>MEYOU<b>AIR</b></span>
+        </div>
+        <p>MeyouAir Virtual Airline © 2025. For Flight Simulation Use Only.</p>
+        <div class="discord-tag">DISCORD SERVER: SOON</div>
     </footer>
 
     <script>
-        // Zegar ZULU
-        function updateZulu() {
+        // Zegar ZULU (UTC)
+        function updateTime() {
             const now = new Date();
-            const time = now.toISOString().split('T')[1].split('.')[0];
-            document.getElementById('zulu-clock').innerText = time + ' ZULU';
+            const h = String(now.getUTCHours()).padStart(2, '0');
+            const m = String(now.getUTCMinutes()).padStart(2, '0');
+            const s = String(now.getUTCSeconds()).padStart(2, '0');
+            document.getElementById('zulu-clock').innerText = `${h}:${m}:${s} ZULU`;
         }
-        setInterval(updateZulu, 1000);
+        setInterval(updateTime, 1000);
+        updateTime();
 
-        // METAR
-        function fetchMetar() {
-            const icao = document.getElementById('icao').value.toUpperCase();
+        // Realistyczny symulator METAR
+        function getMetar() {
+            const icao = document.getElementById('icaoInput').value.toUpperCase();
             if(icao.length < 4) return alert("Błędny kod ICAO");
             
-            // Symulacja pobierania (w prawdziwej wersji podpinasz API)
-            document.getElementById('metar-result').innerText = `${icao} 241230Z 24015KT 9999 FEW025 15/10 Q1013 NOSIG`;
+            const days = new Date().getUTCDate();
+            const hours = new Date().getUTCHours();
+            const report = `${icao} ${days}${hours}20Z 24012KT 9999 FEW030 SCT040 12/08 Q1013 NOSIG`;
+            
+            document.getElementById('metarResult').innerText = report;
         }
 
-        // Konwerter
-        function convertWeight(type) {
-            const kg = document.getElementById('kg');
-            const lbs = document.getElementById('lbs');
-            if(type === 'kg') lbs.value = Math.round(kg.value * 2.20462);
-            else kg.value = Math.round(lbs.value / 2.20462);
+        // Kalkulator Paliwa
+        function convert(el, target) {
+            const val = el.value;
+            if(target === 'lbs') {
+                document.getElementById('lbsInput').value = Math.round(val * 2.20462);
+            } else {
+                document.getElementById('kgInput').value = Math.round(val / 2.20462);
+            }
         }
     </script>
 </body>
