@@ -3,129 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MeyouAir | Virtual Airline</title>
-    <!-- CSS -->
+    <title>MeyouAir | Professional Virtual Airline</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Fonts & Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome do ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Nawigacja -->
     <nav>
-        <div class="logo-container">
-            <img src="logo.png" alt="MeyouAir Logo" class="logo-img">
-            <span style="font-size: 1.5rem; font-weight: 800; letter-spacing: -1px;">MEYOU<span style="color:var(--primary-blue)">AIR</span></span>
+        <div class="logo-section">
+            <img src="logo.png" alt="MeyouAir Logo">
+            <div class="logo-text">Meyou<span>Air</span></div>
         </div>
-        <div class="nav-links">
-            <a href="#home">Start</a>
-            <a href="#radar">Radar</a>
-            <a href="#metar">Pogoda</a>
-            <a href="#fleet">Flota</a>
+        <div class="nav-menu">
+            <a href="#radar">Radar Pogodowy</a>
+            <a href="#tools">Narzędzia</a>
+            <a href="#features">Operacje</a>
+            <a href="https://newsky.app/airline/MYA">NewSky</a>
         </div>
-        <a href="https://newsky.app/airline/MYA" target="_blank" class="btn-primary">Panel NewSky</a>
+        <button class="discord-soon">Discord (Soon)</button>
     </nav>
 
-    <!-- Hero -->
-    <section id="home" class="hero">
-        <h1>Niebo nie ma <br><span>granic.</span></h1>
-        <p style="color: #ccc; margin-bottom: 2rem; max-width: 600px;">Witaj w MeyouAir – wirtualnej linii lotniczej, gdzie realizm spotyka się z pasją. Dołącz do nas na platformie NewSky.</p>
-        <a href="#fleet" class="btn-primary">Zobacz naszą flotę</a>
-    </section>
-
-    <!-- Radar Pogodowy -->
-    <section id="radar">
-        <h2>Radar Pogodowy Live</h2>
-        <p style="text-align:center; color:#aaa; margin-bottom: 2rem;">Realne dane satelitarne dla Twojego lotu.</p>
-        <div class="radar-wrapper">
-            <!-- Windy.com Radar - Realny i działający -->
-            <iframe 
-                src="https://www.windy.com/?52.229,21.011,5,m:fagnagf" 
-                width="100%" 
-                height="100%" 
-                frameborder="0">
-            </iframe>
+    <header class="hero">
+        <p>Virtual Airline System</p>
+        <h1>PRECYZJA W KAŻDYM LOCIE</h1>
+        <div style="display:flex; gap:20px;">
+            <a href="https://newsky.app/airline/MYA" class="btn">Złóż aplikację</a>
+            <div id="zulu-clock" style="font-family: monospace; font-size: 1.5rem; background: rgba(0,0,0,0.5); padding: 10px 20px; border: 1px solid var(--accent-yellow);">00:00:00 ZULU</div>
         </div>
-    </section>
+    </header>
 
-    <!-- METAR Search -->
-    <section id="metar" style="background: rgba(0, 82, 204, 0.05);">
-        <h2>Sprawdź METAR / TAF</h2>
-        <div class="metar-box glass">
-            <p style="margin-bottom: 20px;">Wpisz kod ICAO lotniska, aby otrzymać aktualną pogodę:</p>
-            <input type="text" id="icaoInput" placeholder="np. EPWA" maxlength="4">
-            <button onclick="getMetar()" class="btn-primary">Sprawdź</button>
-            
-            <div id="metarResult" style="margin-top: 25px; text-align: left; display: none;">
-                <div style="padding: 15px; border-left: 4px solid var(--primary-blue); background: rgba(255,255,255,0.05);">
-                    <code id="metarText" style="color: #00a2ff; font-family: monospace; font-size: 1.1rem;"></code>
-                </div>
-            </div>
+    <div class="section-title">
+        <h2>LIVE FLIGHT RADAR</h2>
+        <p>Globalne warunki atmosferyczne i ruch lotniczy w czasie rzeczywistym.</p>
+    </div>
+
+    <div class="radar-container" id="radar">
+        <!-- Re-implementacja Radaru Windy (Najbardziej stabilna) -->
+        <iframe 
+            src="https://www.windy.com/v1.0.1/index.html?52.233,21.067,5,menu,message,marker,layers" 
+            width="100%" 
+            height="100%" 
+            frameborder="0">
+        </iframe>
+    </div>
+
+    <div class="section-title" id="features">
+        <h2>SYSTEMY OPERACYJNE</h2>
+        <p>Wszystko, czego potrzebuje profesjonalny pilot MeyouAir.</p>
+    </div>
+
+    <div class="features-grid">
+        <div class="feature-card">
+            <i class="fas fa-plane-departure"></i>
+            <h3>SimBrief Dispatch</h3>
+            <p>Zintegrowany system planowania lotów. Wygeneruj swój OFP jednym kliknięciem.</p>
+            <a href="https://www.simbrief.com/system/dispatch.php" target="_blank" style="color:var(--accent-yellow); font-size: 0.8rem; text-decoration: none;">OTWÓRZ SYSTEM →</a>
         </div>
-    </section>
-
-    <!-- Flota -->
-    <section id="fleet">
-        <h2>Nasza Flota</h2>
-        <div class="fleet-grid">
-            <div class="fleet-card glass">
-                <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=500" alt="A320">
-                <div class="fleet-info">
-                    <h3>Airbus A320-214</h3>
-                    <p style="color:#888; font-size: 0.9rem;">Idealny na trasy Europejskie.</p>
-                </div>
-            </div>
-            <div class="fleet-card glass">
-                <img src="https://images.unsplash.com/photo-1559266245-2d790f55aa3e?w=500" alt="B737">
-                <div class="fleet-info">
-                    <h3>Boeing 737-800</h3>
-                    <p style="color:#888; font-size: 0.9rem;">Klasyka krótkiego i średniego dystansu.</p>
-                </div>
-            </div>
-            <div class="fleet-card glass">
-                <img src="https://images.unsplash.com/photo-1570710891163-6d3b5c47248b?w=500" alt="B787">
-                <div class="fleet-info">
-                    <h3>Boeing 787-9 Dreamliner</h3>
-                    <p style="color:#888; font-size: 0.9rem;">Komfort na rejsach transatlantyckich.</p>
-                </div>
-            </div>
+        <div class="feature-card">
+            <i class="fas fa-satellite"></i>
+            <h3>Status Sieci</h3>
+            <p>Podgląd pilotów MeyouAir online w sieciach VATSIM oraz IVAO.</p>
         </div>
-    </section>
+        <div class="feature-card">
+            <i class="fas fa-book"></i>
+            <h3>MeyouAir Academy</h3>
+            <p>Dostęp do check-list, map (charts) oraz procedur operacyjnych (SOP).</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-calculator"></i>
+            <h3>Kalkulator V-Speeds</h3>
+            <p>Obliczaj prędkości V1, VR, V2 bezpośrednio przed startem na podstawie masy.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-chart-line"></i>
+            <h3>Rankingi</h3>
+            <p>Statystyki lądowań (fpm) oraz najaktywniejsi piloci miesiąca.</p>
+        </div>
+    </div>
 
-    <!-- Footer -->
+    <div class="tools-flex" id="tools">
+        <div class="metar-search">
+            <h3><i class="fas fa-cloud-sun"></i> Centrum Pogodowe</h3>
+            <p>Pobierz aktualny METAR dla lotniska docelowego:</p>
+            <input type="text" id="icao" placeholder="WPISZ ICAO (np. EPWA)...">
+            <button class="btn" onclick="fetchMetar()">Pobierz Raport</button>
+            <div id="metar-result" style="margin-top:20px; font-family: monospace; background: rgba(0,0,0,0.2); padding: 10px;">...</div>
+        </div>
+
+        <div class="tool-box">
+            <h3><i class="fas fa-weight-hanging"></i> Konwerter Wag</h3>
+            <label>Kilogramy (KG)</label>
+            <input type="number" id="kg" oninput="convertWeight('kg')" placeholder="KG">
+            <label>Funty (LBS)</label>
+            <input type="number" id="lbs" oninput="convertWeight('lbs')" placeholder="LBS">
+        </div>
+    </div>
+
     <footer>
-        <img src="logo.png" alt="MeyouAir" style="height: 40px; margin-bottom: 20px; filter: grayscale(1);">
-        <p>© 2024 MeyouAir Virtual Airline. Nie jesteśmy realną linią lotniczą.</p>
-        <p style="font-size: 0.8rem; margin-top: 10px;">System operacyjny oparty na <a href="https://newsky.app/airline/MYA" style="color:var(--primary-blue)">NewSky</a></p>
+        <img src="logo.png" alt="Logo" style="height: 40px; margin-bottom: 20px;">
+        <p>MeyouAir Virtual Airline © 2025</p>
+        <p style="font-size: 0.7rem; color: #555; margin-top: 10px;">Strona przeznaczona wyłącznie dla celów symulacji lotniczej. Nie jest powiązana z żadną realną linią lotniczą.</p>
     </footer>
 
     <script>
-        // Funkcja METAR - Realne pobieranie danych
-        async function getMetar() {
-            const icao = document.getElementById('icaoInput').value.toUpperCase();
-            const resBox = document.getElementById('metarResult');
-            const resText = document.getElementById('metarText');
+        // Zegar ZULU
+        function updateZulu() {
+            const now = new Date();
+            const time = now.toISOString().split('T')[1].split('.')[0];
+            document.getElementById('zulu-clock').innerText = time + ' ZULU';
+        }
+        setInterval(updateZulu, 1000);
 
-            if(icao.length < 4) return alert("Wpisz poprawny kod ICAO");
-
-            resText.innerText = "Pobieranie danych z serwera...";
-            resBox.style.display = "block";
-
-            try {
-                // Korzystamy z darmowego API CheckWX (wymagałoby klucza) lub fallback do symulacji realistycznej
-                // Tutaj: symulacja realistycznego zapytania (możesz podpiąć AVWX API)
-                setTimeout(() => {
-                    const time = new Date().getUTCDate();
-                    resText.innerText = `${icao} ${time}1250Z 24012KT 9999 FEW030 SCT045 18/12 Q1013 NOSIG`;
-                }, 800);
-            } catch (e) {
-                resText.innerText = "Błąd pobierania danych.";
-            }
+        // METAR
+        function fetchMetar() {
+            const icao = document.getElementById('icao').value.toUpperCase();
+            if(icao.length < 4) return alert("Błędny kod ICAO");
+            
+            // Symulacja pobierania (w prawdziwej wersji podpinasz API)
+            document.getElementById('metar-result').innerText = `${icao} 241230Z 24015KT 9999 FEW025 15/10 Q1013 NOSIG`;
         }
 
-        // Ikony
-        lucide.createIcons();
+        // Konwerter
+        function convertWeight(type) {
+            const kg = document.getElementById('kg');
+            const lbs = document.getElementById('lbs');
+            if(type === 'kg') lbs.value = Math.round(kg.value * 2.20462);
+            else kg.value = Math.round(lbs.value / 2.20462);
+        }
     </script>
 </body>
 </html>
